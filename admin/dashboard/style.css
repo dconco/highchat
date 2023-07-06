@@ -1,0 +1,86 @@
+html {
+    background: url("../../img/header.jpeg") no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+body {
+    margin: 0;
+    padding: 15px;
+    font-family: Monospace;
+    background: #cccccc8a;
+}
+
+html {
+    background: url("../../img/header.jpeg") no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.info {
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    justify-content: center;
+    border: 2px solid #4e4e4e;
+    background-color: #5e5e5eb0;
+}
+
+.row {
+    display: flex;
+    flex-flow: row;
+}
+.row div {
+    width: 50%;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #9c9c9c;
+}
+
+.user {
+    padding: 10px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 5px;
+    border: 2px solid #4e4e4e;
+    background-color: #5e5e5eb0;
+}
+.users {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+.users:hover {
+    background-color: #9c9c9c;
+}
+.users .img {
+    width: 70px;
+    height: 70px;
+    margin-left: 5px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+}
+.users img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.users span {
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: Monospace;
+}
+.users button {
+    color: #fff;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    background-color: darkred;
+}

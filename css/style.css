@@ -1,0 +1,249 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+:root{
+  --blu: #58BAFD;
+  --gry: #006283;
+  --red: #17A829;
+  --ylw: #F4BD03
+}
+
+body{
+  background: #D8D8D8;
+}
+.header{
+  width: 100%;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  overflow-y: scroll;
+  padding-bottom: 30px;
+  background-size: cover;
+  justify-content: center;
+  background: linear-gradient(#000000B8,#7A7A7A94);
+}
+
+.cont{
+  height: 100%;
+  width: 100%;
+  max-width: 500px;
+}
+
+.logo{
+  font-size: 25px;
+  text-align: center;
+  color: #fff;
+  font-weight: 800;
+  padding-top: 20px
+} 
+
+.logo img{
+  width: 120px;
+}
+
+.appnm{
+  font-size: 30px;
+  text-align: center;
+  font-fmily: "Brush Script MT", cursive;
+  font-family: sans-serif;
+  color: #fff;  
+  padding: 10px 0px;
+  font-weight: 999
+}
+
+.form{
+  padding: 15px 0px;
+  background: #FFFFFFC9;
+  margin: 10px 20px;
+  justify-content: center;
+  padding: 20px 20px 5px 20px;
+  border: 2px solid var(--blu);
+  border-radius: 5px;
+  animation: 1s amino ;
+}
+
+.form_heada{
+  color: var(--red);
+  font-size: 20px;
+  padding: 10px;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 1px solid var(--ylw);
+}
+
+.set input, select{
+  display: block;
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid gray;
+  background: transparent;
+  transition: .5s;
+  outline: none;
+}
+
+label{
+  color: #080808AD;
+  color: var(--gry);
+  font-size: 13px;
+  font-family: monospace;
+  font-weight: bolder;
+}
+
+.set{
+  margin-top: 18px;
+}
+
+.in_sets{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn,
+.btn_l{
+  text-align: center;
+}
+
+.btn button{
+  margin: 15px;
+  padding: 10px 20px;
+  border: none;
+  font-size: 17px;
+  font-weight: bold;
+  justify-content: center;
+  text-transform: uppercase;
+  background: var(--red);
+  color: #fff;
+}
+.btn {
+    border: none;
+}
+
+.quest{
+  text-align: center;
+  font-family: "Brush Script MT", cursive;
+  font-size: 13px
+}
+
+.btna a{
+  text-decoration: none;
+  color: var(--gry);
+  border: 1pt solid var(--gry);
+  padding: 8px 25px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.btnas a{
+  text-decoration: none;
+  color: var(--red);
+  border: 1pt solid var(--red);
+  padding: 8px 25px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.btna,
+.btnas{
+  margin: 13px 0px;
+  text-align: center;
+}
+
+.foota{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  opacity: .5
+}
+
+.n{
+  font-size: 11px;
+}
+
+.form_log{
+  color: var(--gry);
+  font-size: 20px;
+  padding: 10px;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 1px solid var(--ylw);
+}
+
+.btn_l .log{
+  margin: 15px;
+  padding: 10px 20px;
+  border: none;
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: var(--gry);
+  color: #fff;
+}
+
+input[type="password"],
+input[type="text"],
+input[type='email']{
+  color: darkolivegreen;
+  font-weight: 400
+}
+
+.forg{
+  font-size: 11px ;
+  font-style: Italic;
+  color: var(--red);
+  padding: 5px 0px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block
+}
+.load {
+    background: #00000070;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    top: 0px;
+    position: fixed;
+    transition: .5s;
+    width: 100%;
+    z-index: 9999;
+}
+
+.l {
+    height: 50px;
+    animation: loader .9s linear infinite;
+    position: relative;
+    width: 50px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: #36FF00;
+    border-bottom-color: #36FF00;
+}
+
+.t {
+    font-size: 20px
+}
+.err_msg{
+    color: red;
+    font-size: 10px;
+}
+
+
+@keyframes loader {
+    0% {
+        transform: rotate(-360deg);
+    }
+    50%{
+    }
+  }
+
+@keyframes amino{
+  0%{
+    margin-top: 600px;
+    opacity: .0
+  }
+  
+}

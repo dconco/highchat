@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#505b62" />
+        <meta name="title" content="Highchat WebView">
+    
+        <!-- FAVICON ICONS -->
+        <link rel="icon" href="/img/icon.png" type="image/png" />
+        <link rel="shortcut icon" href="/img/icon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/img/icon.png" />
+        
+        <script src="./assets/jquery/jquery.min.js"></script>
+        <script src="./assets/jquery/jquery-ajax.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+        <title>Highchat WebView</title>
+        
+        <!-- JAVASCRIPT LOAD FIRST -->
+        <script type="text/javascript" charset="utf-8">
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            
+            const url = urlParams.get('url');
+            const type = urlParams.get('type');
+            
+            if (url === null || type === null) {
+                $("html").load("/error/");
+            } 
+            else if (type === "redirect") //redirect site
+            {
+                if (url.includes("http")) {
+                    window.location = url;
+                } else {
+                    window.location = "https://" + url;
+                }
+            }
+            else { //webview
+                var webview = true;
+                
+                if (url.includes("http")) {
+                    var webview_url = url;
+                } else {
+                    var webview_url = "https://" + url;
+                }
+            }
+        </script>
+        
+        <style type="text/css" media="all">
+            body {
+                display: flex;
+                justify-content: center;
+            }
+            #btn {
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 50px;
+                display: flex;
+                position: fixed;
+                margin-right: 10px;
+            }
+            button {
+                width: 100%;
+                color: #fff;
+                font-size: 15px;
+                background-color: green;
+                border: 4px solid darkgreen;
+            }
+            button:hover {
+                background-color: darkgreen;
+            }
+            #webview {
+                width: 94%;
+                position: fixed;
+                overflow-y: auto;
+                border: 8px double green;
+                height: calc(100% - 80px);
+                border-radius: 5px 5px 0 0;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <iframe id="webview"></iframe>
+        
+        <div id="btn">
+            <button type="button">Continue with the Site Fully!</button>
+        </div>
+        
+        <script type="text/javascript" charset="utf-8">
+            if (webview === true) {
+                $("#webview").attr("src", webview_url);
+                
+                $("#btn").click(() => {
+                    window.location = webview_url;
+                })
+            }
+        </script>
+    </body>
+</html>
