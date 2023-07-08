@@ -12,6 +12,15 @@
     $sqlQuery = $conn->query($sql)->fetch_object();
     
     if ($sqlQuery->admin === "false") {
+        echo '
+        <html>
+        <head>
+            <meta name="title" content="Admin Dashboard">
+            <meta name="description" content="This Page is mainly for the People/Developers managing HighChat.">
+            <title>Admin Dashboard</title>
+        </head>
+        </html>';
+        
         include_once "../../error/501.html";
         exit;
     }
@@ -57,10 +66,10 @@
             $restrict_res .= "<div class='users'>
                                 <div class='img' onclick='Redirect({$restrict->user_id})'>
                                     <img src='../../profile_pictures/{$restrict->img}' 
-                                        alt='{$restrict->firstname} Profile Picture' />
+                                        alt='{$restrict->fullname} Profile Picture' />
                                 </div>
                                 
-                                <span>{$restrict->firstname} {$restrict->lastname}</span>
+                                <span>{$restrict->fullname}</span>
                                 <button style='background:darkgreen' onclick='Restrict({$restrict->user_id})'>Restrict</button>
                             </div>";
         }
@@ -89,18 +98,10 @@
         <title>Admin Dashboard</title>
     </head>
     <body>
-        <!-- ========[ HEADING ]======== -->
-        <header>
-            <div>
-                
-            </div>
-        </header>
-        <!-- ========[ // END HEADING ]======== -->
-        
         <!-- ========[ BODY ]======== -->
         <center>
             <h3>Admin Dashboard</h3>
-            <p><?php echo $sqlQuery->firstname . ' ' . $sqlQuery->lastname; ?>, You're an Admin of HighChat</p>
+            <p><?php echo $sqlQuery->fullname; ?>, You're an Admin of HighChat</p>
         </center>
         
         <br />
@@ -142,10 +143,10 @@
                 <div class="users" onclick="Redirect(<?php echo $admin->user_id ?>)">
                     <div class="img">
                         <img src="<?php echo '../../profile_pictures/' . $admin->img ?>" 
-                            alt="<?php echo $admin->firstname . '\'s Profile Picture' ?>" />
+                            alt="<?php echo $admin->fullname . '\'s Profile Picture' ?>" />
                     </div>
                     
-                    <span><?php echo $admin->firstname . ' ' . $admin->lastname ?></span>
+                    <span><?php echo $admin->fullname ?></span>
                 </div>
             <?php endwhile; ?>
         </div>
@@ -164,10 +165,10 @@
                     <div class="users">
                         <div class="img" onclick="Redirect(<?php echo $restricted_data->user_id ?>)">
                             <img src="<?php echo '../../profile_pictures/' . $restricted_data->img ?>" 
-                                alt="<?php echo $restricted_data->firstname . '\'s Profile Picture' ?>" />
+                                alt="<?php echo $restricted_data->fullname . '\'s Profile Picture' ?>" />
                         </div>
                         
-                        <span><?php echo $restricted_data->firstname . ' ' . $restricted_data->lastname ?></span>
+                        <span><?php echo $restricted_data->fullname ?></span>
                         <button onclick="Unrestrict(<?php echo $restricted_data->user_id ?>)">Unrestrict</button>
                     </div>
                 <?php endwhile; ?>

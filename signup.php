@@ -30,35 +30,35 @@
             <div class="form">
                 <div class="form_heada">SIGN UP</div>
                 <form action="#">
+                    <!-- ========[ FULL NAME CONTAINER ]======== -->
                     <div class="set">
-                        <label for="in_fn">Firstname:</label>
-                        <input type="text" name="fname" id="in_fn" placeholder="Enter first name...">
+                        <label for="in_fn">Fullname:</label>
+                        <input type="text" name="fname" id="in_fn" placeholder="Enter Fullname...">
                     </div>
                     
-                    <div class="set">
-                        <label for="in_ln">Lastname:</label>
-                        <input type="text" name="lname" id="in_ln" placeholder="Enter last name...">
-                        <div class="err_msg" id="error_ln"></div>
-                    </div>
-                    
+                    <!-- ========[ EMAIL CONTAINER ]======== -->
                     <div class="set">
                         <label for="in_em">Email:</label>
                         <input type="email" name="email" class="j" id="in_em" placeholder="Enter Email...">
                         <div class="err_msg" id="error_em"></div>
                     </div>
                     
+                    <!-- ========[ PASSWORD CONTAINER ]======== -->
                     <div class="set">
                         <label for="in_pw">Password:</label>
-                        <input type="password" name="pwd" id="in_pw1" placeholder="Enter password...">
+                        <input type="password" name="pwd" id="in_pw1" placeholder="Enter Password...">
                     </div>
         
+                    <!-- ========[ CONFIRM PASSWORD CONTAINER ]======== -->
                     <div class="set">
                         <label for="in_pw">Confirm Password:</label>
-                        <input type="password" name="pwd2" id="in_pw2" placeholder="Confirm password...">
+                        <input type="password" name="pwd2" id="in_pw2" placeholder="Confirm Password...">
                         <div class="err_msg" id="error_ps"></div>
                     </div>
                     
+                    <!-- ========[ GROUPED INPUT FIELD ]======== -->
                     <div class="in_sets">
+                        <!-- ========[ SELECT COUNTRY CONTAINER ]======== -->
                         <div class="in_set">
                             <label for="in_ct">Select Country</label>
                             <select name="country" id="in_ct">
@@ -66,6 +66,7 @@
                             </select>
                         </div>
                         
+                        <!-- ========[ SELECT GENDER OF CONTAINER ]======== -->
                         <div class="in_set" style="margin-left:5px">
                             <label for="gnr">Gender</label>
                             <select name="gender" id="gnr">
@@ -101,7 +102,7 @@
     </div>
     
     
-    <!-- JAVASCRIPT LINKS -->
+    <!-- ========[ JAVASCRIPT LINKS]======== -->
     <script src="js/validate.js" type="text/javascript"></script>
 </body>
 </html>

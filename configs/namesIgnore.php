@@ -1,2 +1,13 @@
 <?php 
-    $names = ["highchat", "highchats", "onipededavid", "spyrochat", "spyrochats", "spyro", "chat", "chats", "daveconco"];
+    ## FORBIDDEN  NAMES IN REGISTRATION##
+    $names = [
+        "highchat", 
+        "highchats", 
+        "high chat", 
+        "high chats", 
+        "onipededavid", 
+        "onipede david", 
+        "dave conco", 
+        "daveconco",
+        "peter kent"
+    ];

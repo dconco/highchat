@@ -86,7 +86,7 @@
                         <!-- CHAT MESSAGE -->
                         <div class='msg' style='font-weight:bolder'>
                             <div class='name'>
-                                {$data['firstname']} {$data['lastname']} " . (($user_id === $data["user_id"]) ? ' (you)' : '') . "
+                                {$data['fullname']}" . (($user_id === $data["user_id"]) ? ' (you)' : '') . "
                                 {$verify}
                             </div>
                             <div class='body'>" . (($b === "seen" || $body == "No Messages") ? $body : "<b>$body</b>") . "</div>

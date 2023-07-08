@@ -89,9 +89,9 @@
         }
         
         if ($data["user_id"] === $user_id) {
-            $fullname = $data['firstname'] . ' ' . $data['lastname'] . ' (you)';
+            $fullname = $data['fullname'] . ' (you)';
         } else {
-            $fullname = $data['firstname'] . ' ' . $data['lastname'];
+            $fullname = $data['fullname'];
             $followElem = 
             "• 
             <span id='{$data['user_id']}' onclick='follow({$data['user_id']})' style='font-size:13px;color:{$color}'>{$follow}</span>";

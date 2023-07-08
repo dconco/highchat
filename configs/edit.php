@@ -5,16 +5,13 @@
     $country = htmlspecialchars($_POST["country"]);
     $pwd = $conn->real_escape_string(htmlspecialchars($_POST["pwd"]));
     $fname = $conn->real_escape_string(htmlspecialchars($_POST["fname"]));
-    $lname = $conn->real_escape_string(htmlspecialchars($_POST["lname"]));
     $username = $conn->real_escape_string(htmlspecialchars($_POST["username"]));
     $email = $conn->real_escape_string(htmlspecialchars($_POST["email"]));
     $about = $conn->real_escape_string(htmlspecialchars($_POST["about"], ENT_QUOTES));
     $newPwd = $conn->real_escape_string(htmlspecialchars($_POST["newPwd"]));
     $newConPwd = $conn->real_escape_string(htmlspecialchars($_POST["newConPwd"]));
     
-    $lower1 = strtolower($fname);
-    $lower2 = strtolower($lname);
-    $dave = str_replace(" ", "", $lower1 . $lower2);
+    $ignore = strtolower($fname);
     
     include_once "./namesIgnore.php";
     
@@ -22,14 +19,14 @@
     $res = $conn->query($sqlPwd)->fetch_assoc();
         
     //firstname update
-    if (!empty($fname) && strlen($fname) >= 3 && strlen($fname) <= 15) {
-        if (in_array($lower1, $names) || $dave == "daveconco" || $dave == "spyrochat" || $dave == "highchat" || $dave == "highchats" || $dave == "onipededavid") {
-            echo "The Firstname Provided is Forbidden! ";
+    if (!empty($fname) && strlen($fname) >= 3 && strlen($fname) <= 30) {
+        if (in_array($ignore, $names)) {
+            echo "The Fullname Provided is Forbidden! ";
         } else {
             if (ctype_space($fname)) {
-                echo "Firstname should not contain only Space! ";
+                echo "Fullname should not contain only Space! ";
             } else {
-                $sql = "UPDATE users SET firstname = '$fname' WHERE user_id = '{$_SESSION['user_id']}'";
+                $sql = "UPDATE users SET fullname = '$fname' WHERE user_id = '{$_SESSION['user_id']}'";
                 
                 // check if the user is updated successfully
                 if ($conn->query($sql) === TRUE) {
@@ -40,35 +37,8 @@
             }
         }
         
-    } else if (!empty($fname) && strlen($fname) < 3 || strlen($fname) > 15) {
-        echo "Firstname should be less than 16 and greater than 2! ";
-    }
-    
-    //lastname update
-    if (!empty($lname) && strlen($lname) >= 3 && strlen($lname) <= 15) {
-        if (in_array($lower2, $names) || $dave == "daveconco" || $dave == "spyrochat" || $dave == "highchat" || $dave == "highchats" || $dave == "onipededavid") {
-            echo "The Lastname Provided is Forbidden!";
-        } else {
-            if (ctype_space($lname)) {
-                echo "Lastname should not contain only Space! ";
-            } else {
-                if ($lname === "???") {
-                    $sql = "UPDATE users SET lastname = '' WHERE user_id = '{$_SESSION['user_id']}'";
-                } else {
-                    $sql = "UPDATE users SET lastname = '$lname' WHERE user_id = '{$_SESSION['user_id']}'";
-                }
-                
-                // check if the user is updated successfully
-                if ($conn->query($sql) === TRUE) {
-                    echo "success";
-                } else {
-                    echo "Unable to update Profile Informations! ";
-                }
-            }
-        }
-        
-    } else if (!empty($lname) && strlen($lname) < 3 || strlen($lname) > 15) {
-        echo "Lastname should be less than 16 and greater than 2! ";
+    } else if (!empty($fname) && strlen($fname) < 3 || strlen($fname) > 30) {
+        echo "Fullname should be less than 31 and greater than 2! ";
     }
     
     //username update

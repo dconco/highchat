@@ -15,7 +15,7 @@
                 $status["success"] = "Logged-In Successful!";
                 
                 $_SESSION["user_id"] = $data["user_id"];
-                setcookie('user_id', $data["user_id"], time() + (86400 * 7), '/');
+                setcookie('user_id', $data["user_id"], time() + (86400 * 30), '/');
             } else {
                 $status["error"] = "Incorrect Password";
             }

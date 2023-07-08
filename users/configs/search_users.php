@@ -4,7 +4,7 @@
     $user_id = $_COOKIE["user_id"];
     $q = htmlspecialchars($_GET["q"]);
     
-    $sql = "SELECT * FROM users WHERE (firstname LIKE '%$q%' OR lastname LIKE '%$q%')";
+    $sql = "SELECT * FROM users WHERE (fullname LIKE '%$q%')";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {

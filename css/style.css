@@ -11,18 +11,23 @@
 }
 
 body{
-  background: #D8D8D8;
+  height: 100vh;
+  padding-bottom: 10px;
+  overflow-y: scroll;
+  background: linear-gradient(#000000B8,#7A7A7A94);
+  background: url(../img/header.jpeg) no-repeat;
+  background-size: cover;
 }
 .header{
   width: 100%;
   margin: auto;
-  height: 100vh;
   display: flex;
+  height: 100%;
   overflow-y: scroll;
-  padding-bottom: 30px;
-  background-size: cover;
+  background-size: cover; 
+  padding-bottom: 0px;
   justify-content: center;
-  background: linear-gradient(#000000B8,#7A7A7A94);
+  background: #808080a4;
 }
 
 .cont{

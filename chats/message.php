@@ -38,11 +38,11 @@
         }
         
         if ($incoming_id == $outgoing_id) {
-            $name = $data['firstname'] . ' ' . $data['lastname'];
-            (strlen($name) > 15) ? $fullname = substr($name, 0, 15) . '... (you)' : $fullname = $name . ' (you)';
+            $name = $data['fullname'];
+            $fullname = (strlen($name) > 15) ? substr($name, 0, 15) . '... (you)' : $name . ' (you)';
         } else {
-            $name = $data['firstname'] . ' ' . $data['lastname'];
-            (strlen($name) > 20) ? $fullname = substr($name, 0, 20) . '...' : $fullname = $name;
+            $name = $data['fullname'];
+            $fullname = (strlen($name) > 20) ? substr($name, 0, 20) . '...' : $name;
             
         }
     } else {
@@ -137,7 +137,7 @@
 <html lang="en">
 <head>
     
-    <title><?php echo $data['firstname'] . ' ' . $data['lastname'] ?> | Highchat</title>
+    <title><?php echo $data['fullname'] ?> is on Highchat</title>
     <?php include_once("../extras/header.php") ?>
 
     <!-- CSS LINKS -->
@@ -170,7 +170,7 @@
                 <img class="rounded-circle img-fluid d-flex mx-auto m-auto" style="object-fit:center; width:100%; height:100%" src="/profile_pictures/<?php echo $data['img'] ?>" alt="<?php echo ($data['firstname'] . '\'s Profile Picture')  ?>">
             </div>
             
-            <span class="text-white text-center nav-header"><?php echo $data['firstname'] . ' ' . $data['lastname'] . ' ' . $verify; ?></span>
+            <span class="text-white text-center nav-header"><?php echo $data['fullname'] . ' ' . $verify; ?></span>
             <hr class="nav-hr bg-white">
         </div>
         
@@ -313,13 +313,13 @@
         <div class="short-menu bg-secondary flex-column">
             <div id="sticker"><i class="bi bi-emoji-smile"></i><i>Send Stickers</i></div>
             <hr>
-            <div id="image"><i class="bi bi-image"></i><i>Send Image</i></div>
+            <div id="voice-call"><i class="bi bi-image"></i><i>Voice Call</i></div>
             <hr>
-            <div id="video"><i class="bi bi-camera-video"></i><i>Send Video</i></div>
+            <div id="video-call"><i class="bi bi-camera-video"></i><i>Video Call</i></div>
             <hr>
-            <div id="audio"><i class="bi bi-music-note-beamed"></i><i>Send Audio</i></div>
+            <div id="media"><i class="bi bi-image"></i><i>Send Medias</i></div>
             <hr>
-            <div id="file"><i class="bi bi-file-earmark-text"></i><i>Send Docs</i></div>
+            <div id="docs"><i class="bi bi-file-earmark-text"></i><i>Send Docs</i></div>
         </div>
     </main>
     

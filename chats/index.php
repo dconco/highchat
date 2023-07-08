@@ -74,7 +74,7 @@
                 </div>
                 
                 <span class="text-white text-center nav-header">
-                    <?php echo $user['firstname'] . ' ' . $user['lastname']; ?>
+                    <?php echo $user['fullname'] ?>
                     
                     <?php if ($followers->num_rows >= 20 && $user['email_verify'] === $user['email']): ?>
                         <i class='bi-check-circle-fill' style='font-size:13px;color:green' onclick='This user has been verified by Spyrochat!'></i>
@@ -127,7 +127,7 @@
                     
                     <a href="/logout.php" class="logout text-danger">Logout</a>
                 </div>
-                <div class="text-center text-white" style="font-size:0.8pc; margin-top:20px; margin-bottom:15px">&copy; 2023 - <?php echo date('Y') ?> | <a class="text-white" href="https://daveconco.epizy.com"><b>Dave Conco</b></a></div>
+                <div class="text-center text-white" style="font-size:0.8pc; margin-top:20px; margin-bottom:15px">&copy; 2023 - <?php echo date('Y') ?> | <a class="text-white" href="/"><b>HighChat</b></a></div>
             </div>
         </div>
         

@@ -79,12 +79,8 @@
                         <h3>Update Info About Yourself</h3>
                         
                         <br>
-                        <label for="fname" class="pb-2">Enter your Firstname</label>
+                        <label for="fname" class="pb-2">Enter your Fullname</label>
                         <br><input type="text" id="fname" name="fname" class="p-2 w-100 form-control">
-                        
-                        <br>
-                        <label for="lname" class="pb-2">Enter your Lastname</label>
-                        <br><input type="text" id="lname" name="lname" class="p-2 w-100 form-control">
                         
                         <br>
                         <label for="username" class="pb-2">Edit your Username</label>
